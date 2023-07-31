@@ -1,0 +1,76 @@
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #118a7e;
+  font-family: "PT Mono", monospace;
+  font-weight: 900;
+}
+h2 {
+  color: #3baea0;
+  padding-bottom: 0;
+}
+.card-decoration {
+  max-width: 75%;
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(
+    95.2deg,
+    rgb(173, 252, 234) 26.8%,
+    rgb(192, 229, 246) 64%
+  );
+}
+.current-date {
+  color: #1f6f78;
+  padding: 0 30px 20px;
+  font-size: 17px;
+}
+
+.main-cloud-icon {
+  font-size: 90px;
+  padding-left: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #00bbf0;
+}
+.main-temprature {
+  font-size: 60px;
+  padding-top: 30px;
+  padding-left: 30px;
+  margin: 0;
+  color: #3baea0;
+}
+.mostly-cloudy {
+  display: block;
+  color: #1f6f78;
+  font-size: 17px;
+  padding-left: 90px;
+  margin: 0;
+  text-transform: capitalize;
+}
+.upcomming-days {
+  text-align: center;
+  color: #118a7e;
+  font-size: 25px;
+  font-weight: 600;
+}
+.table-deco {
+  text-align: center;
+}
+.day-color {
+  color: #3baea0;
+}
+.temp-color {
+  color: #118a7e;
+}
+.cloud-icon {
+  color: #00bbf0;
+}
+.edit-temp {
+  text-decoration: none;
+  color: #3baea0;
+  font-size: 60px;
+  padding-left: -30px;
+}
+.location {
+  margin-left: 30px;
+}

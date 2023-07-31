@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather App ☁</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="my-weather-app-project/index.css" />
+    <script
+      src="https://kit.fontawesome.com/719c854432.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+      <div class="card card-decoration">
+        <div class="card-body">
+          <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <form class="d-flex" role="search" id="search-form">
+                <input
+                  class="form-control me-5"
+                  type="search"
+                  placeholder="Search City"
+                  aria-label="Search"
+                  autocomplete="off"
+                  id="search-city"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+                <button
+                  class="btn btn-outline-success location"
+                  id="location"
+                  type="button"
+                >
+                  Location
+                </button>
+              </form>
+            </div>
+          </nav>
+          <br />
+          <header>
+            <h2 id="city-name">Berlin, Germany</h2>
+            <small class="current-date" id="current-day">
+              Monday, 17th July</small
+            >
+          </header>
+          <div class="row">
+            <div class="col-6">
+              <i class="fa-solid fa-cloud main-cloud-icon"></i>
+            </div>
+            <div class="col-6">
+              <span class="main-temprature" id="current-temp"> 27 </span>
+              <span
+                ><a
+                  href="#"
+                  class="edit-temp"
+                  class="main-temprature"
+                  id="celsius-temp"
+                  >°C</a
+                >
+              </span>
+              <span class="main-temprature"> | </span>
+              <span
+                ><a href="#" class="edit-temp" id="fahrenheit-temp">°F</a></span
+              >
+              <span class="mostly-cloudy" id="description">Mostly Cloudy</span>
+            </div>
+
+            <hr />
+            <p class="upcomming-days">Next 5 days</p>
+            <div class="row table-deco">
+              <div class="col">
+                <div class="card" style="width: 10rem">
+                  <div class="card-body">
+                    <h5 class="card-title day-color">Tue</h5>
+                    <i class="fa-solid fa-cloud cloud-icon"></i>
+                    <p class="card-text temp-color">14°C- 26°C</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 10rem">
+                  <div class="card-body">
+                    <h5 class="card-title day-color">Wed</h5>
+                    <i class="fa-solid fa-cloud cloud-icon"></i>
+                    <p class="card-text temp-color">15°C- 26°C</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 10rem">
+                  <div class="card-body">
+                    <h5 class="card-title day-color">Thu</h5>
+                    <i class="fa-sharp fa-solid fa-cloud-rain cloud-icon"></i>
+                    <p class="card-text temp-color">14°C- 23°C</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 10rem">
+                  <div class="card-body">
+                    <h5 class="card-title day-color">Fri</h5>
+                    <i class="fa-solid fa-cloud cloud-icon"></i>
+                    <p class="card-text temp-color">13°C- 23°C</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 10rem">
+                  <div class="card-body">
+                    <h5 class="card-title day-color">Sat</h5>
+                    <i class="fa-solid fa-cloud-sun cloud-icon"></i>
+                    <p class="card-text temp-color">13°C- 24°C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="my-weather-app-project/index.js"></script>
+  </body>
+</html>
