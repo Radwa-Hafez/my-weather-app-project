@@ -29,6 +29,7 @@ function searchCityName(event) {
   event.preventDefault();
   let searchCity = document.querySelector("#search-city").value;
   getCityName(searchCity);
+  document.querySelector("#search-city").value = "";
 }
 //Current date function
 function currentDate(date) {
