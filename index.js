@@ -17,10 +17,11 @@ function showCurrentCity(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   city.innerHTML = `${response.data.name},${response.data.sys.country}`;
-  temp.innerHTML = Math.round(response.data.main.temp);
+  temp.innerHTML = Math.round(celsiusTemperature);
   desc.innerHTML = response.data.weather[0].description;
 }
 //Search button function
@@ -88,10 +89,11 @@ function showLocationTemp(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   currentCity.innerHTML = `${response.data.name},${response.data.sys.country}`;
-  currenttTemp.innerHTML = Math.round(response.data.main.temp);
+  currenttTemp.innerHTML = Math.round(celsiusTemperature);
   desc.innerHTML = response.data.weather[0].description;
 }
 
@@ -104,7 +106,12 @@ function getLocationTemp(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = Math.round(currentTemp.innerHTML * 1.8 + 32);
+  currentTemp.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
+}
+function convertToCelsius(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(celsiusTemperature);
 }
 
 //Display city name and temperature
@@ -121,7 +128,11 @@ let currentLocation = document.querySelector("#location");
 currentLocation.addEventListener("click", getLocationTemp);
 
 //convert to fahrenheitTemp
+let celsiusTemperature = null;
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", convertToFahrenheit);
 
+//convert to celsius temperature
+let celsiusTemp = document.querySelector("#celsius-temp");
+celsiusTemp.addEventListener("click", convertToCelsius);
 getCityName("Berlin");
