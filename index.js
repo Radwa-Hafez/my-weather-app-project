@@ -5,13 +5,18 @@ function getCityName(city) {
   axios.get(apiUrl).then(showCurrentCity);
 }
 
-//API response function
+//Main API response function
 function showCurrentCity(response) {
   let city = document.querySelector("#city-name");
   let temp = document.querySelector("#current-temp");
   let desc = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let imageElement = document.querySelector("#icon");
+  imageElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   city.innerHTML = `${response.data.name},${response.data.sys.country}`;
@@ -78,6 +83,11 @@ function showLocationTemp(response) {
   let desc = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let imageElement = document.querySelector("#icon");
+  imageElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   currentCity.innerHTML = `${response.data.name},${response.data.sys.country}`;
