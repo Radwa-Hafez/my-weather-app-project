@@ -10,6 +10,10 @@ function showCurrentCity(response) {
   let city = document.querySelector("#city-name");
   let temp = document.querySelector("#current-temp");
   let desc = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   city.innerHTML = `${response.data.name},${response.data.sys.country}`;
   temp.innerHTML = Math.round(response.data.main.temp);
   desc.innerHTML = response.data.weather[0].description;
@@ -72,6 +76,10 @@ function showLocationTemp(response) {
   let currentCity = document.querySelector("#city-name");
   let currenttTemp = document.querySelector("#current-temp");
   let desc = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   currentCity.innerHTML = `${response.data.name},${response.data.sys.country}`;
   currenttTemp.innerHTML = Math.round(response.data.main.temp);
   desc.innerHTML = response.data.weather[0].description;
@@ -105,3 +113,5 @@ currentLocation.addEventListener("click", getLocationTemp);
 //convert to fahrenheitTemp
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", convertToFahrenheit);
+
+getCityName("Berlin");

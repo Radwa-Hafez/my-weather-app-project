@@ -52,14 +52,22 @@
           </div>
           <br />
           <header>
-            <h2 id="city-name">Berlin, Germany</h2>
-            <small class="current-date" id="current-day">
-              Monday, 17th July</small
-            >
+            <h2 id="city-name"></h2>
+            <small class="current-date" id="current-day"> </small>
+            <ul class="weather-description">
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/hr</li>
+            </ul>
           </header>
           <div class="row">
             <div class="col-6">
-              <i class="fa-solid fa-cloud main-cloud-icon"></i>
+              <div class="d-flex">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Clear"
+                  class="main-cloud-icon"
+                />
+              </div>
             </div>
             <div class="col-6">
               <span class="main-temprature" id="current-temp"> 27 </span>
